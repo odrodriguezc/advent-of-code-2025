@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/advent_of_code_2025'
+
+if ARGV.length < 2
+  puts "Usage: #{$0} DAY PART"
+  puts "Example: #{$0} 1 2"
+  exit 1
+end
+
+day = ARGV[0].to_i
+part = ARGV[1].to_i
+
+begin
+  runner = AdventOfCode2025::Runner.new(day: day, part: part)
+  result = runner.run
+  puts "Day #{day} Part #{part} Solution: #{result}"
+rescue AdventOfCode2025::Error => e
+  puts "Error: #{e.message}"
+  exit 1
+end
