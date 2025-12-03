@@ -3,7 +3,7 @@
 require_relative '../lib/advent_of_code_2025'
 
 if ARGV.length < 2
-  puts "Usage: #{$0} DAY PART"
+  puts "Usage: #{$0} DAY PART [--visualize] [--fixture]"
   puts "Example: #{$0} 1 2"
   exit 1
 end
@@ -11,9 +11,10 @@ end
 day = ARGV[0].to_i
 part = ARGV[1].to_i
 visualize = ARGV.include?('--visualize')
+use_fixture = ARGV.include?('--fixture') # Check if the --fixture flag is provided
 
 begin
-  runner = AdventOfCode2025::Runner.new(day: day, part: part)
+  runner = AdventOfCode2025::Runner.new(day: day, part: part, use_fixture: use_fixture)
   runner.run
   result = runner.result
   puts "Day #{day} Part #{part} Solution: #{result}"

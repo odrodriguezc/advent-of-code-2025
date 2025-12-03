@@ -21,6 +21,26 @@ cd advent_of_code_2025
 bundle install
 ```
 
+### Ruby2D Dependency
+
+This project uses [Ruby2D](https://www.ruby2d.com/) for visualization. Ruby2D requires additional system libraries to work properly, especially on Linux. Follow the [official Ruby2D installation guide](https://www.ruby2d.com/learn/get-started/) for detailed instructions.
+
+#### Linux Dependencies
+
+On Linux, you need to install the following libraries:
+
+```bash
+sudo apt-get install libegl1-mesa-dev libgles2-mesa-dev libxi-dev libxrandr-dev libxinerama-dev libxcursor-dev libasound2-dev
+```
+
+After installing the required libraries, you can install the `ruby2d` gem:
+
+```bash
+gem install ruby2d
+```
+
+For other operating systems, refer to the [Ruby2D documentation](https://www.ruby2d.com/learn/get-started/).
+
 ## Usage
 
 ### Running Solutions
