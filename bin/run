@@ -10,11 +10,17 @@ end
 
 day = ARGV[0].to_i
 part = ARGV[1].to_i
+visualize = ARGV.include?('--visualize')
 
 begin
   runner = AdventOfCode2025::Runner.new(day: day, part: part)
-  result = runner.run
+  runner.run
+  result = runner.result
   puts "Day #{day} Part #{part} Solution: #{result}"
+
+  if visualize
+    runner.drawer.draw
+  end
 rescue AdventOfCode2025::Error => e
   puts "Error: #{e.message}"
   exit 1

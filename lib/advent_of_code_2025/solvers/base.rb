@@ -6,7 +6,7 @@
 # solve_part_1 and solve_part_2 methods.
 #
 # @example Creating a day solution
-#   class AdventOfCode2025::Days::Day01 < AdventOfCode2025::Days::Base
+#   class AdventOfCode2025::Solvers::Day01 < AdventOfCode2025::Solvers::Base
 #     private
 #
 #     def solve_part_1
@@ -20,12 +20,15 @@
 #
 # @example Using a day solution
 #   input = File.read("input.txt")
-#   solution = AdventOfCode2025::Days::Day01.new(input)
+#   solution = AdventOfCode2025::Solvers::Day01.new(input)
 #   result_part_1 = solution.solve(part: 1)
 #   result_part_2 = solution.solve(part: 2)
-class AdventOfCode2025::Days::Base
+class AdventOfCode2025::Solvers::Base
+  attr_reader :data
+  
   def initialize(input)
     @input = input
+    @data = nil
   end
 
   def solve(part: 1)

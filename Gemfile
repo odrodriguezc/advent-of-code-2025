@@ -12,4 +12,6 @@ gem "rspec", "~> 3.0"
 
 gem "rubocop", "~> 1.21"
 
-gem 'zeitwerk'
+gem "zeitwerk"
+
+gem "ruby2d"

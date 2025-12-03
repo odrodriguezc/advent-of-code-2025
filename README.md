@@ -7,6 +7,7 @@ AdventOfCode2025 is a Ruby gem designed to solve the challenges of [Advent of Co
 - **Daily Challenges**: Each day has its own class to encapsulate the logic for solving the two parts of the challenge.
 - **Input Management**: Automatically loads input files for each day.
 - **CLI Launcher**: Run solutions for specific days and parts directly from the command line.
+- **Visualization**: Includes an optional `--visualize` flag to display graphical representations of solutions for supported days.
 - **Gem Structure**: Organized as a Ruby gem for maintainability and extensibility.
 - **Testing**: Includes RSpec tests for each day's solutions.
 
@@ -27,13 +28,19 @@ bundle install
 To run the solution for a specific day and part, use the `bin/run` script:
 
 ```bash
-bin/run DAY PART
+bin/run DAY PART [--visualize]
 ```
 
 For example, to run Day 1, Part 2:
 
 ```bash
 bin/run 1 2
+```
+
+To enable visualization for supported days:
+
+```bash
+bin/run 1 2 --visualize
 ```
 
 ### Input Files
@@ -48,7 +55,7 @@ Given the input file `inputs/day_01.txt`, the following command will execute the
 bin/run 1 1
 ```
 
-The output will display the solution for the specified day and part.
+The output will display the solution for the specified day and part. If the `--visualize` flag is used, a graphical representation will also be displayed for supported days.
 
 ## Development
 
@@ -72,6 +79,8 @@ bundle exec rake install
 - `lib/`: Contains the main codebase, including:
   - `advent_of_code_2025/runner.rb`: Handles the logic for running solutions.
   - `advent_of_code_2025/days/`: Contains classes for each day's solutions.
+  - `advent_of_code_2025/drawers/`: Provides visualization functionality for supported days.
+  - `advent_of_code_2025/loaders/`: Manages input file loading and days solver/drawers loading mechanisms.
 - `spec/`: Contains RSpec tests for the project.
 - `spec/support/fixtures/inputs/`: Example input files for testing.
 

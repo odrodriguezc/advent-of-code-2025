@@ -1,4 +1,4 @@
-class AdventOfCode2025::Days::Two < AdventOfCode2025::Days::Base
+class AdventOfCode2025::Solvers::Two < AdventOfCode2025::Solvers::Base
   private
 
   def solve_part_1

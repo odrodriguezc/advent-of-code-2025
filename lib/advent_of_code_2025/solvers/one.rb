@@ -14,7 +14,7 @@
 #   L5
 #
 # @return [Integer] The count of times position zero was reached, depending on the part being solved
-class AdventOfCode2025::Days::One < AdventOfCode2025::Days::Base
+class AdventOfCode2025::Solvers::One < AdventOfCode2025::Solvers::Base
   private
 
   def solve_part_1
@@ -29,6 +29,8 @@ class AdventOfCode2025::Days::One < AdventOfCode2025::Days::Base
     start_position = 50
     position = start_position
     zero_count = 0
+    update_data(position, 0, nil, zero_count) # Initial state
+    
 
     @input.each_line do |line|
       direction = line[0]
@@ -44,11 +46,23 @@ class AdventOfCode2025::Days::One < AdventOfCode2025::Days::Base
           position = 0 if position > 99
         end
 
-        zero_count += 1 if position.zero? && count_each_step
+        if count_each_step
+          zero_count += 1 if position.zero? 
+          update_data(position, distance, direction, zero_count)
+
+        end
       end
-      zero_count += 1 if position.zero? && !count_each_step
+      if !count_each_step
+        zero_count += 1 if position.zero?
+        update_data(position, distance, direction, zero_count)
+      end
     end
 
     zero_count
+  end
+
+  def update_data(position, distance, direction, zero_count)
+    @data ||= []
+    @data << {position: position, distance: distance, direction: direction, zero_counts: zero_count}
   end
 end

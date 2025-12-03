@@ -1,4 +1,4 @@
-class AdventOfCode2025::Days::Three < AdventOfCode2025::Days::Base
+class AdventOfCode2025::Solvers::Three < AdventOfCode2025::Solvers::Base
   Batery = Struct.new("Batery", :pos, :val)
 
   private

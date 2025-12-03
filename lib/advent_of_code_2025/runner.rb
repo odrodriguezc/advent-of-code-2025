@@ -11,14 +11,16 @@
 # @attr_reader day [Integer] the day number of the puzzle (1-25)
 # @attr_reader part [Integer] the part number of the puzzle (1-2)
 class AdventOfCode2025::Runner
+  attr_reader :day, :part, :result, :drawer
   def initialize(day:, part:)
     @day = day
     @part = part
   end
 
   def run
-    input = AdventOfCode2025::InputLoader.load(@day)
-    solver = AdventOfCode2025::SolverLoader.load(@day, input)
-    solver.solve(part: @part)
+    input = AdventOfCode2025::Loaders::Input.load(@day)
+    solver = AdventOfCode2025::Loaders::Solver.load(@day, input)
+    @result = solver.solve(part: @part)
+    @drawer = AdventOfCode2025::Loaders::Drawer.load(@day, solver)
   end
 end
