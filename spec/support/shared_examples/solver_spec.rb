@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 RSpec.shared_examples "a day solver" do |input_file, expected_results|
   def load_input(file)
-    filepath = File.join(AdventOfCode2025::PROJECT_ROOT, "spec/support/fixtures/inputs", file)
+    filepath = File.join(AdventOfCode::PROJECT_ROOT, "spec/support/fixtures/inputs", file)
     File.read(filepath)
   end
 
-  describe "#solve_part_1" do
+  describe "#solve_part_a" do
     it "solves part 1 correctly" do
       input = load_input(input_file)
       day = described_class.new(input)
@@ -13,7 +15,7 @@ RSpec.shared_examples "a day solver" do |input_file, expected_results|
     end
   end
 
-  describe "#solve_part_2" do
+  describe "#solve_part_b" do
     it "solves part 2 correctly" do
       input = load_input(input_file)
       day = described_class.new(input)

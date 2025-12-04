@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    advent_of_code_2025 (0.1.0)
+    advent_of_code (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -80,7 +80,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  advent_of_code_2025!
+  advent_of_code!
   irb
   rake (~> 13.0)
   rspec (~> 3.0)

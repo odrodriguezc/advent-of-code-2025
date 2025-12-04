@@ -1,6 +1,6 @@
-# AdventOfCode2025
+# AdventOfCode
 
-AdventOfCode2025 is a Ruby gem designed to solve the challenges of [Advent of Code 2025](https://adventofcode.com/2025) in an organized and structured way. This project follows Ruby gem conventions and uses object-oriented programming principles to provide a clean and modular solution for each day's challenges.
+AdventOfCode is a Ruby gem designed to solve the challenges of [Advent of Code 2025](https://adventofcode.com/2025) in an organized and structured way. This project follows Ruby gem conventions and uses object-oriented programming principles to provide a clean and modular solution for each day's challenges.
 
 ## Features
 
@@ -16,8 +16,8 @@ AdventOfCode2025 is a Ruby gem designed to solve the challenges of [Advent of Co
 To use this gem locally, clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/[USERNAME]/advent_of_code_2025.git
-cd advent_of_code_2025
+git clone https://github.com/[USERNAME]/advent_of_code.git
+cd advent_of_code
 bundle install
 ```
 
@@ -101,16 +101,16 @@ bundle exec rake install
 - `bin/`: Contains executable scripts, including the CLI launcher (`run`).
 - `inputs/`: Stores input files for each day's challenge.
 - `lib/`: Contains the main codebase, including:
-  - `advent_of_code_2025/runner.rb`: Handles the logic for running solutions.
-  - `advent_of_code_2025/solvers/`: Contains classes for each day's solutions.
-  - `advent_of_code_2025/drawers/`: Provides visualization functionality for supported days.
-  - `advent_of_code_2025/loaders/`: Manages input file loading and days solver/drawers loading mechanisms.
+  - `advent_of_code/runner.rb`: Handles the logic for running solutions.
+  - `advent_of_code/solvers/`: Contains classes for each day's solutions.
+  - `advent_of_code/drawers/`: Provides visualization functionality for supported days.
+  - `advent_of_code/loaders/`: Manages input file loading and days solver/drawers loading mechanisms.
 - `spec/`: Contains RSpec tests for the project.
 - `spec/support/fixtures/inputs/`: Example input files for testing.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at [https://github.com/[USERNAME]/advent_of_code_2025](https://github.com/[USERNAME]/advent_of_code_2025).
+Bug reports and pull requests are welcome on GitHub at [https://github.com/[USERNAME]/advent_of_code](https://github.com/[USERNAME]/advent_of_code).
 
 ## License
 

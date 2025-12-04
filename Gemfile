@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in advent_of_code_2025.gemspec
+# Specify your gem's dependencies in advent_of_code.gemspec
 gemspec
 
 gem "irb"

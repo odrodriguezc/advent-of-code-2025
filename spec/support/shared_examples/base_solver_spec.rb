@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 RSpec.shared_examples "a base solver inheritance" do
   describe "inheritance" do
     it "inherits from Base solver" do
-      expect(described_class < AdventOfCode2025::Solvers::Base).to be true
+      expect(described_class < AdventOfCode::Solvers::Base).to be true
     end
   end
 

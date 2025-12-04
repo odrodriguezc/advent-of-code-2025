@@ -1,28 +1,29 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-require_relative '../lib/advent_of_code_2025'
+require_relative "../lib/advent_of_code"
 
 if ARGV.length < 2
-  puts "Usage: #{$0} DAY PART [--visualize] [--fixture]"
-  puts "Example: #{$0} 1 2"
+  puts "Usage: #{$PROGRAM_NAME} DAY PART [--visualize] [--fixture]"
+  puts "Example: #{$PROGRAM_NAME} 1 a --visualize --fixture"
   exit 1
 end
 
 day = ARGV[0].to_i
-part = ARGV[1].to_i
-visualize = ARGV.include?('--visualize')
-use_fixture = ARGV.include?('--fixture') # Check if the --fixture flag is provided
+%w[a b 1 2].include?(ARGV[1].downcase) || (puts "Part must be 'a' or 'b'"
+                                           exit 1)
+part = ARGV[1].downcase
+visualize = ARGV.include?("--visualize")
+use_fixture = ARGV.include?("--fixture") # Check if the --fixture flag is provided
 
 begin
-  runner = AdventOfCode2025::Runner.new(day: day, part: part, use_fixture: use_fixture, visualize: visualize)
+  runner = AdventOfCode::Runner.new(day: day, part: part, use_fixture: use_fixture, visualize: visualize)
   runner.run
   result = runner.result
   puts "Day #{day} Part #{part} Solution: #{result}"
 
-  if visualize
-    runner.drawer.draw
-  end
-rescue AdventOfCode2025::Error => e
+  runner.drawer.draw if visualize
+rescue AdventOfCode::Error => e
   puts "Error: #{e.message}"
   exit 1
 end

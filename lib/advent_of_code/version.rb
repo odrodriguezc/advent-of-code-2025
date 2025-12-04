@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-module AdventOfCode2025
+module AdventOfCode
   VERSION = "0.1.0"
 end
