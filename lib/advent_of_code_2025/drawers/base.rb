@@ -1,6 +1,6 @@
-class AdventOfCode2025::Drawers::Base
-  require 'ruby2d'
+require "ruby2d"
 
+class AdventOfCode2025::Drawers::Base
   def initialize(solver)
     @data = solver.data
   end

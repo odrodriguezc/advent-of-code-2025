@@ -63,6 +63,10 @@ To enable visualization for supported days:
 bin/run 1 2 --visualize
 ```
 
+To run with fixture input 
+```bash
+bin/run 1 2 --fixture
+```
 ### Input Files
 
 Input files for each day should be placed in the `inputs/` directory and named as `day_XX.txt` (e.g., `day_01.txt` for Day 1). Example inputs are provided in the `spec/support/fixtures/inputs/` directory for testing purposes.
@@ -98,7 +102,7 @@ bundle exec rake install
 - `inputs/`: Stores input files for each day's challenge.
 - `lib/`: Contains the main codebase, including:
   - `advent_of_code_2025/runner.rb`: Handles the logic for running solutions.
-  - `advent_of_code_2025/days/`: Contains classes for each day's solutions.
+  - `advent_of_code_2025/solvers/`: Contains classes for each day's solutions.
   - `advent_of_code_2025/drawers/`: Provides visualization functionality for supported days.
   - `advent_of_code_2025/loaders/`: Manages input file loading and days solver/drawers loading mechanisms.
 - `spec/`: Contains RSpec tests for the project.

@@ -1,4 +1,3 @@
-
 # Solves Day One of Advent of Code 2025.
 #
 # This class processes movement instructions on a circular track of 100 positions (0-99).
@@ -30,7 +29,6 @@ class AdventOfCode2025::Solvers::One < AdventOfCode2025::Solvers::Base
     position = start_position
     zero_count = 0
     update_data(position, 0, nil, zero_count) # Initial state
-    
 
     @input.each_line do |line|
       direction = line[0]
@@ -38,21 +36,20 @@ class AdventOfCode2025::Solvers::One < AdventOfCode2025::Solvers::Base
 
       distance.times do
         case direction
-        when 'L'
+        when "L"
           position -= 1
           position = 99 if position < 0
-        when 'R'
+        when "R"
           position += 1
           position = 0 if position > 99
         end
 
-        if count_each_step
-          zero_count += 1 if position.zero? 
-          update_data(position, distance, direction, zero_count)
+        next unless count_each_step
 
-        end
+        zero_count += 1 if position.zero?
+        update_data(position, distance, direction, zero_count)
       end
-      if !count_each_step
+      unless count_each_step
         zero_count += 1 if position.zero?
         update_data(position, distance, direction, zero_count)
       end
@@ -63,6 +60,6 @@ class AdventOfCode2025::Solvers::One < AdventOfCode2025::Solvers::Base
 
   def update_data(position, distance, direction, zero_count)
     @data ||= []
-    @data << {position: position, distance: distance, direction: direction, zero_counts: zero_count}
+    @data << { position: position, distance: distance, direction: direction, zero_counts: zero_count }
   end
 end

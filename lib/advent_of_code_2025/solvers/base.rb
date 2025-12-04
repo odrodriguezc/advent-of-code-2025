@@ -1,4 +1,3 @@
-
 # Base class for Advent of Code 2025 day solutions.
 #
 # This class provides a common interface for all daily puzzle solutions.
@@ -25,7 +24,7 @@
 #   result_part_2 = solution.solve(part: 2)
 class AdventOfCode2025::Solvers::Base
   attr_reader :data
-  
+
   def initialize(input)
     @input = input
     @data = nil
@@ -35,7 +34,7 @@ class AdventOfCode2025::Solvers::Base
     part == 1 ? solve_part_1 : solve_part_2
   end
 
-  private 
+  private
 
   def solve_part_1
     raise NotImplementedError, "This #{self.class} cannot respond to:"

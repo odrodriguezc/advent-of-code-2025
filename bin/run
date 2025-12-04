@@ -14,7 +14,7 @@ visualize = ARGV.include?('--visualize')
 use_fixture = ARGV.include?('--fixture') # Check if the --fixture flag is provided
 
 begin
-  runner = AdventOfCode2025::Runner.new(day: day, part: part, use_fixture: use_fixture)
+  runner = AdventOfCode2025::Runner.new(day: day, part: part, use_fixture: use_fixture, visualize: visualize)
   runner.run
   result = runner.result
   puts "Day #{day} Part #{part} Solution: #{result}"

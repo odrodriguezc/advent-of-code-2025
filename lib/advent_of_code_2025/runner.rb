@@ -12,16 +12,17 @@
 class AdventOfCode2025::Runner
   attr_reader :day, :part, :result, :drawer
 
-  def initialize(day:, part:, use_fixture: false)
+  def initialize(day:, part:, use_fixture: false, visualize: false)
     @day = day
     @part = part
     @use_fixture = use_fixture # Store the flag to use fixture inputs
+    @visualize = visualize
   end
 
   def run
     input = AdventOfCode2025::Loaders::Input.load(@day, use_fixture: @use_fixture) # Pass the flag to the loader
     solver = AdventOfCode2025::Loaders::Solver.load(@day, input)
     @result = solver.solve(part: @part)
-    @drawer = AdventOfCode2025::Loaders::Drawer.load(@day, solver)
+    @drawer = AdventOfCode2025::Loaders::Drawer.load(@day, solver) if @visualize
   end
 end
