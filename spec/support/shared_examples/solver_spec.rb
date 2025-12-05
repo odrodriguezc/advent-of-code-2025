@@ -11,7 +11,7 @@ RSpec.shared_examples "a day solver" do |input_file, expected_results|
       input = load_input(input_file)
       day = described_class.new(input)
 
-      expect(day.solve(part: 1)).to eq(expected_results[:part_1])
+      expect(day.solve(part: 1)).to eq(expected_results[:part_a])
     end
   end
 
@@ -20,7 +20,7 @@ RSpec.shared_examples "a day solver" do |input_file, expected_results|
       input = load_input(input_file)
       day = described_class.new(input)
 
-      expect(day.solve(part: 2)).to eq(expected_results[:part_2])
+      expect(day.solve(part: 2)).to eq(expected_results[:part_b])
     end
   end
 end

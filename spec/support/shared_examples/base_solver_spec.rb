@@ -11,17 +11,15 @@ RSpec.shared_examples "a base solver inheritance" do
 
   describe "initialization" do
     it "can be initialized with input" do
-      input = "sample input"
-      day = described_class.new(input)
-      expect(day).to be_a(described_class)
+      solver = described_class.new(input)
+      expect(solver).to be_a(described_class)
     end
   end
 
   describe "#solve" do
     it "responds to solve method" do
-      input = "sample input"
-      day = described_class.new(input)
-      expect(day).to respond_to(:solve)
+      solver = described_class.new(input)
+      expect(solver).to respond_to(:solve)
     end
   end
 end
